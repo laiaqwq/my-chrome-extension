@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="full-screen" content="yes" />
+    <!--UC强制全屏-->
+    <meta name="browsermode" content="application" />
+    <!--UC应用模式-->
+    <meta name="x5-fullscreen" content="true" />
+    <!--QQ强制全屏-->
+    <meta name="x5-page-mode" content="app" />
+    <!--QQ应用模式-->
+    <title>New Tab</title>
+    <meta name="keywords" content="搜索，网址导航，浏览器主页">
+    <meta name="description" content="可能是最简洁的搜索导航，给你简单舒爽的搜索体验。">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/sousuo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/font_1572019_yrk10qvz.css" />
+    <link rel="stylesheet" href="./css/font_1717091_aav2rq7m97j.css" />
+    <!--<link rel="stylesheet" href="css/loading.css">-->
+    <!--加载动画-->
+    <!--<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/jquery.cookie.min.js"></script>
+    <script src="./js/xd.js"></script>
+    <script src="./js/setting.js"></script>
+
+</head>
+
+<body>
+    <!--加载动画
+        箭头
+    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+</svg>
+    -->
+    <!--<script src="js/loading.js"></script>-->
+    <!--  -->
+    <div id="menu">
+        <i></i>
+    </div>
+    <!-- 设置 -->
+    <div class="list closed">
+        <ul>
+            <li class="title"><h2>设置</h2></li>
+            <li class="title">背景图片设置</li>
+            <li><input type="radio" name="backgrond-setting" value="default"><p>默认</p></li>
+            <li><input type="radio" name="backgrond-setting" value="remote-url"><p>远程地址</p><input id="remote-url" type="url" value="http://"></li>
+            <li><input type="radio" name="backgrond-setting" value="local-url"><p>本地地址</p>
+                <input type="file" id="local-file" accept="image/*"></li>
+            <li class="title">屏保</li>
+            <li><input type="radio" name="screensaver" value="no"><p>无</p></li>
+            <li><input type="radio" name="screensaver" value=""><p>上浮背景</p></li>
+        </ul>
+    </div>
+    <!--和风天气-->
+    <iframe id="weather" src="https://newtab-weather-iframe.laiqwq.eu.org" frameborder="0"></iframe>
+    <!---->
+    <div id="search" class="s-search">
+        <div id="search-list" class="hide-type-list">
+            <div class="s-type">
+                <span></span>
+                <div class="s-type-list animated fadeInUp">
+                    <label for="type-baidu">常用</label>
+                    <label for="type-bing">搜索</label>
+                    <label for="type-baiduxueshu">学习</label>
+                    <label for="type-br">工具</label>
+                    <label for="type-wechat">社区</label>
+                    <label for="type-快递100">生活</label>
+                </div>
+            </div>
+            <div class="search-group group-a">
+                <span class="type-text">常用</span>
+                <ul class="search-type">
+                    <li><input class="bw-button" checked="" hidden="" type="radio" name="type" id="type-google" value="https://www.google.com/search?q=" data-placeholder="Search" /><label for="type-google"><span>Google</span></label></li>
+                    <li><input class="bw-button" hidden="" type="radio" name="type" id="type-github" value="https://github.com/search?q=" data-placeholder="github" /><label for="type-github"><span>github</span></label></li>
+                    <li><input class="bw-button" hidden="" type="radio" name="type" id="type-bing" value="https://cn.bing.com/search?q=" data-placeholder="Bing搜索" /><label for="type-bing"><span>Bing</span></label></li>
+                    <li><input class="bw-button" hidden="" type="radio" name="type" id="type-baidu" value="https://www.baidu.com/s?wd=" data-placeholder="百度一下" /><label for="type-baidu"><span>百度</span></label></li>
+                </ul>
+            </div>
+            <div class="search-group group-b">
+                <span class="type-text">搜索</span>
+                <ul class="search-type">
+                    <li><input class="bw-button" hidden="" type="radio" name="type" id="type-google" value="https://www.google.com/search?q=" data-placeholder="谷歌两下" /><label for="type-google"><span>Google</span></label></li>
+                    <li><input class="bw-button" hidden="" type="radio" name="type" id="type-bing" value="https://cn.bing.com/search?q=" data-placeholder="Bing搜索" /><label for="type-bing"><span>Bing</span></label></li>
+                    <li><input class="bw-button" hidden="" type="radio" name="type" id="type-yandex" value="https://yandex.com/search/?text=" data-placeholder="Yandex搜索" /><label for="type-yandex"><span>yandex</span></label></li>
+                    <li><input class="bw-button" hidden="" type="radio" name="type" id="type-360" value="https://www.so.com/s?q=" data-placeholder="360好搜" /><label for="type-360"><span>360</span></label></li>
+                    <li><input class="bw-button" hidden="" type="radio" name="type" id="type-sogo" value="https://www.sogou.com/web?query=" data-placeholder="搜狗搜索" /><label for="type-sogo"><span>搜狗</span></label></li>
+                </ul>
+            </div>
+            <div class="search-group group-c">
+                <span class="type-text">学习</span>
+                <ul class="search-type">
+                    <li><input class="bw-button" hidden="" type="radio" name="type" id="type-baiduxueshu" value="https://xueshu.baidu.com/s?wd=" data-placeholder="百度学术" /><label for="type-baiduxueshu"><span>百度</span></label></li>
+                    <li><input class="bw-button" hidden="" type="radio" name="type" id="type-googlescholar" value="https://scholar.google.com/scholar?hl=zh-CN&as_sdt=0%2C5&q=" data-placeholder="谷歌学术" /><label for="type-googlescholar"><span>谷歌</span></label></li>
+                    <li><input class="bw-button" hidden="" type="radio" name="type" id="type-Zlibrary" value="https://b-ok.global/s/?q=" data-placeholder="Zlibrary电子书" /><label for="type-Zlibrary"><span>Zlibrary</span></label></li>
+                    <li><input class="bw-button" hidden="" type="radio" name="type" id="type-github" value="https://github.com/search?q=" data-placeholder="github" /><label for="type-github"><span>github</span></label></li>
+                    <li><input class="bw-button" hidden="" type="radio" name="type" id="type-CSDN" value="https://so.csdn.net/so/search/s.do?q=" data-placeholder="CSDN" /><label for="type-CSDN"><span>CSDN</span></label></li>
+                </ul>
+            </div>
+            <div class="search-group group-d">
+                <span class="type-text">工具</span>
+                <ul class="search-type">
+                    <li><input class="bw-button" hidden="" type="radio" name="type" id="type-br" value="http://rank.chinaz.com/all/" data-placeholder="请输入网址(不带http://)" /><label for="type-br"><span>权重查询</span></label></li>
+                    <li><input class="bw-button" hidden="" type="radio" name="type" id="type-links" value="http://link.chinaz.com/" data-placeholder="请输入网址(不带http://)" /><label for="type-links"><span>友链检测</span></label></li>
+                    <li><input class="bw-button" hidden="" type="radio" name="type" id="type-icp" value="https://icp.aizhan.com/" data-placeholder="请输入网址(不带http://)" /><label for="type-icp"><span>备案查询</span></label></li>
+                    <li><input class="bw-button" hidden="" type="radio" name="type" id="type-ping" value="http://ping.chinaz.com/" data-placeholder="请输入网址(不带http://)" /><label for="type-ping"><span>PING检测</span></label></li>
+                    <li><input class="bw-button" hidden="" type="radio" name="type" id="type-404" value="http://tool.chinaz.com/Links/?DAddress=" data-placeholder="请输入网址(不带http://)" /><label for="type-404"><span>死链检测</span></label></li>
+                    <li><input class="bw-button" hidden="" type="radio" name="type" id="type-ciku" value="http://www.ciku5.com/s?wd=" data-placeholder="请输入关键词" /><label for="type-ciku"><span>关键词挖掘</span></label></li>
+                </ul>
+            </div>
+            <div class="search-group group-e">
+                <span class="type-text">社区</span>
+                <ul class="search-type">
+                    <li><input class="bw-button" hidden="" type="radio" name="type" id="type-wechat" value="http://weixin.sogou.com/weixin?type=2&amp;query=" data-placeholder="微信" /><label for="type-wechat"><span>微信</span></label></li>
+                    <li><input class="bw-button" hidden="" type="radio" name="type" id="type-weibo" value="http://s.weibo.com/weibo/" data-placeholder="微博" /><label for="type-weibo"><span>微博</span></label></li>
+                    <li><input class="bw-button" hidden="" type="radio" name="type" id="type-douban" value="https://www.douban.com/search?q=" data-placeholder="豆瓣" /><label for="type-douban"><span>豆瓣</span></label></li>
+                    <li><input class="bw-button" hidden="" type="radio" name="type" id="type-why" value="https://ask.seowhy.com/search/?q=" data-placeholder="SEO问答社区" /><label for="type-why"><span>搜外问答</span></label></li>
+                </ul>
+            </div>
+            <div class="search-group group-f">
+                <span class="type-text">生活</span>
+                <ul class="search-type">
+                    <li><input class="bw-button" hidden="" type="radio" name="type" id="type-快递100" value="http://www.kuaidi100.com/?" data-placeholder="快递100" /><label for="type-快递100"><span>快递100</span></label></li>
+                    <li><input class="bw-button" hidden="" type="radio" name="type" id="type-xiachufang" value="http://www.xiachufang.com/search/?keyword=" data-placeholder="下厨房" /><label for="type-xiachufang"><span>下厨房</span></label></li>
+                    <li><input class="bw-button" hidden="" type="radio" name="type" id="type-xiangha" value="https://www.xiangha.com/so/?q=caipu&amp;s=" data-placeholder="香哈菜谱" /><label for="type-xiangha"><span>香哈菜谱</span></label></li>
+                    <li><input class="bw-button" hidden="" type="radio" name="type" id="type-12306" value="http://www.12306.cn/?" data-placeholder="12306" /><label for="type-12306"><span>12306</span></label></li>
+                    <li> <input class="bw-button" hidden="" type="radio" name="type" id="type-qunar" value="https://www.qunar.com/?" data-placeholder="去哪儿" /><label for="type-qunar"><span>去哪儿</span></label></li>
+                </ul>
+            </div>
+        </div>
+        <form action="https://www.baidu.com/s?wd=" method="get" target="_self" id="super-search-fm">
+            <input type="text" id="search-text" placeholder="输入关键字搜索" style="outline:0" />
+            <button type="submit"><i class="iconfont icon-sousuo"></i></button>
+            <ul id="ul" class="ko"></ul>
+        </form>
+        <div id="yy" style="display:none;">
+            <input type="text" id="kos" placeholder="<?php echo $word; ?>" />
+            <button type="submit" id="kob"><i class="iconfont icon-xdss"></i></button>
+            <ul id="kol" class="ko"></ul>
+        </div>
+        <div class="set-check hidden-xs">
+            <input type="checkbox" id="set-search-blank" class="bubble-3" autocomplete="off" />
+        </div>
+
+    </div>
+    <script type="text/javascript" src="js/yyss.js"></script>
+    <script type="text/javascript" src="js/sousuo.js"></script>
+    <script type="text/javascript" src="js/lianxiang.js"></script>
+    <script src="./js/domonload.js"></script>
+    <iframe class="iframe-guide" src="http://guide.laiqwq.com" width="100%" height="100%"></iframe>
+        <div id="guide-menu" class="">
+        <svg style="width:46px;height:46px" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+        </svg>
+    </div>
+    <div class="bgo-mask"></div>
+    <div class="bgo" style="background-size: cover"></div>
+    
+
+</body>
+
+</html>
+<!--
+网址：https://wxnan.gitee.io/x_home_page/
+gitee：https://gitee.com/wxnan/x_home_page
+                Xiaonan，2020.3.10
+-->

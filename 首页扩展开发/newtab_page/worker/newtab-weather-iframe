@@ -1,0 +1,52 @@
+//push to cloudflare worker
+let responsehtml = `
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+    <div id="he-plugin-simple"></div>
+    <script>
+    WIDGET = {
+      "CONFIG": {
+        "modules": "1023",
+        "background": "4",
+        "backgroundColor": "4343434d",
+        "tmpColor": "FFFFFF",
+        "tmpSize": "16",
+        "cityColor": "FFFFFF",
+        "citySize": "16",
+        "aqiColor": "FF0000",
+        "aqiSize": "16",
+        "weatherIconSize": "24",
+        "alertIconSize": "18",
+        "padding": "10px 10px 10px 10px",
+        "shadow": "1",
+        "language": "auto",
+        "borderRadius": "5",
+        "fixed": "true",
+        "vertical": "top",
+        "horizontal": "left",
+        "left": "10",
+        "top": "10",
+        "key": "f595c28e534f4e61bb51c8904544eed9"
+      }
+    }
+    </script>
+    <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script>
+    </body>
+</html>
+`
+    
+
+
+addEventListener("fetch", event => {
+  event.respondWith(handleRequest(event.request))
+})
+
+async function handleRequest(request) {
+  return new Response(responsehtml,{
+    headers: {
+      'content-type': 'text/html;charset=UTF-8',
+    },
+  });
+}
