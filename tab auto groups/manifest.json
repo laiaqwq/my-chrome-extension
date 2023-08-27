@@ -1,12 +1,12 @@
 {
   "name": "Getting Started Example",
-  "description": "Build an Extension!",
+  "description": "标签分组",
   "version": "1.0",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["storage", "activeTab", "scripting","tabs"],
+  "permissions": ["storage", "activeTab", "scripting","tabs","tabGroups"],
   "host_permissions": [
     "http://*/*",
     "https://*/*"
