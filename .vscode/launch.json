@@ -1,0 +1,21 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome",
+            "url": "chrome://newtab",
+            "webRoot": "${workspaceFolder}\\首页扩展开发\\newtab_page\\",
+            "sourceMapPathOverrides": {
+                "chrome-extension://djljjcpajlcbpgbalonakmmfgmpfapfg/newtab_page/*": 
+                "${workspaceFolder}\\首页扩展开发\\newtab_page\\"     
+            },
+            // Here it is!
+            "runtimeArgs": ["--load-extension=${workspaceFolder}\\首页扩展开发"]
+        }
+    ]
+}

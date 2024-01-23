@@ -64,27 +64,31 @@ body {
     height: 50%;
 }
 
-.bgo-mask {
-    display: inline-block;
-    position: absolute;
-    background-color: rgba(1, 8, 14, 0.2);
+.bgo{
+    width: 100%;
+    height: 100%;
     background-attachment: fixed;
     -moz-background-size: cover;
     /*背景图片拉伸以铺满全屏*/
     -ms-background-size: cover;
     -webkit-background-size: cover;
     background-size: cover;
-    background-position: center;
-    z-index: 2;
-    width: 100%;
-    height: 100%;
+    background-position: calc(50% - 8px) calc(50% + 8px);
+    position: absolute;
 }
 
-.bgo {
-    display: inline-block;
+.bgo.bgo-mask {
+    background-color: rgba(1, 8, 14, 0.2);
+    z-index: 2;
+}
+
+.bgo.updataAsyncDesktop.bgo-img{
+    background-repeat: no-repeat;
+    background-attachment: local;
+}
+
+.bgo.bgo-img {
     background-color: #1685a9;
-    width: 100%;
-    height: 100%;
     background-image: url(https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302);
     /*
     https://ae01.alicdn.com/kf/H60e9661f4cda429b87af46e40ea080149.png
@@ -94,22 +98,9 @@ body {
     https://api.dujin.org/bing/1920.php
     https://api.ixiaowai.cn/gqapi/gqapi.php
     https://api.ixiaowai.cn/api/api.php*/
-    background-attachment: fixed;
-    -moz-background-size: cover;
-    /*背景图片拉伸以铺满全屏*/
-    -ms-background-size: cover;
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: center;
     z-index: 1;
 }
 
-.bgo {
-    /*background-image: url(https://ae01.alicdn.com/kf/Hb8a25d5356974c4a90462adac158ef3di.png);*/
-    /*http://xzhuye.is-best.net/api/sjbizhi.php*/
-    /*https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302&device=mobile*/
-    background-size: cover;
-}
 
 html {
     font-family: 'Noto Sans SC Sliced', PingFangSC-Light, Microsoft YaHei UI, Microsoft YaHei, helvetica, sans-serif;
@@ -276,6 +267,9 @@ a {
     border-color: #fff;
     margin-left:4%;
     margin-right: 4%;
+}
+
+.list input.inputlong{
     width: 60%;
 }
 

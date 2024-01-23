@@ -6,7 +6,7 @@
   "chrome_url_overrides" : {
     "newtab": "/newtab_page/index.html"
   },
-  "permissions": ["storage", "activeTab", "scripting","unlimitedStorage","cookies"],
+  "permissions": ["storage", "window-management", "activeTab", "scripting","unlimitedStorage","cookies"],
   "action": {
     "default_icon": {
       "16": "/images/get_started16.png",
