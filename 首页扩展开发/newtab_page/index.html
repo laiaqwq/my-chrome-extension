@@ -51,9 +51,11 @@
             <li class="title"><h2>设置</h2></li>
             <li class="title">背景图片设置</li>
             <li><input type="radio" name="backgrond-setting" value="default"><p>默认</p></li>
-            <li><input type="radio" name="backgrond-setting" value="remote-url"><p>远程地址</p><input id="remote-url" type="url" value="http://"></li>
+            <li><input type="radio" name="backgrond-setting" value="remote-url"><p>远程地址</p><input id="remote-url" class="inputlong" type="url" value="http://"></li>
             <li><input type="radio" name="backgrond-setting" value="local-url"><p>本地地址</p>
-                <input type="file" id="local-file" accept="image/*"></li>
+                <input class="inputlong" type="file" id="local-file" accept="image/*"></li>
+            <li class="title">背景对其方式</li>
+            <li><input type="checkbox" id="asyncdesktop"><p>根据屏幕位置移动</p></li>
             <li class="title">屏保</li>
             <li><input type="radio" name="screensaver" value="no"><p>无</p></li>
             <li><input type="radio" name="screensaver" value=""><p>上浮背景</p></li>
@@ -160,8 +162,8 @@
             <path fill="currentColor" d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
         </svg>
     </div>
-    <div class="bgo-mask"></div>
-    <div class="bgo" style="background-size: cover"></div>
+    <div class="bgo-mask bgo"></div>
+    <div class="bgo-img bgo" style="background-size: cover"></div>
     
 
 </body>
