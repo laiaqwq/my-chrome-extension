@@ -13,13 +13,13 @@ function dataURLtoFile(dataurl, filename) {
 
 function asyncDesktop(currentScreen) {
     const position = {top:-(screenY-currentScreen.currentScreen.availTop)-(window.outerHeight - window.innerHeight),
-        left:-(screenX-currentScreen.currentScreen.availLeft)};
+        left:-(screenX-currentScreen.currentScreen.availLeft)-18};
 
     $(".bgo").css(position);
     // $(".bgo").height(screen.height); 
     // $(".bgo").width(screen.width);
     $(".bgo").height(currentScreen.currentScreen.height); 
-    $(".bgo").width(currentScreen.currentScreen.width);
+    $(".bgo").width(currentScreen.currentScreen.width+20);
 }
 
 async function getScreens(){
